@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class LeapYear{
+	public static void main(String[] args){
+		System.out.print("请输入一个人年份：");
+		Scanner info = new Scanner(System.in);
+		int year = info.nextInt();
+		String result = year % 400 == 0?"是":yer % 4 == 0&&year%100!=0?"是":"不是";
+		System.out.print("\n" + year + "年"+result + "闰年");	
+	}
+}
