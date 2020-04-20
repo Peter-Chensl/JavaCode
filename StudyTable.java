@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+
+//学习计划，星期一，星期三，星期五学习Java；星期二，星期六，星期四学习C语言；星期日休息；
+
+public class StudyTable{
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		System.out.println("请输入星期几（1-7）：");
+		int day = input.nextInt();
+		if(1 == day || 3 == day || 5 == day){
+			System.out.println("学习Java");
+		}else if(2 == day || 6 == day){
+			System.out.println("学习C语言");
+		}else{
+			System.out.println("休息");
+		}
+	}
+}
