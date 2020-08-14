@@ -11,6 +11,8 @@ public class Input implements Runnable {
 		// TODO Auto-generated method stub
 		while(true) {
 				synchronized (r) {
+					if(r.flag )
+						try {r.wait();}catch(Exception ex) {}
 					if(i %2 == 0) {
 						r.name = "ÕÅÈý";
 						r.sex = "ÄÐ";
@@ -19,6 +21,8 @@ public class Input implements Runnable {
 						r.name = "lisi";
 						r.sex = "nv";
 					}
+					r.flag = true;
+					r.notify();
 				}
 				i++;
 			}

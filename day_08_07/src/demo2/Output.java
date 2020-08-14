@@ -10,7 +10,11 @@ public class Output implements Runnable {
 		// TODO Auto-generated method stub
 		while(true) {
 			synchronized (r) {
+				if(!r.flag)
+					try {r.wait();}catch(Exception ex){}
 				System.out.println(r.name +".." + r.sex);
+				r.flag = false;
+				r.notify();
 			}
 		}
 	}
